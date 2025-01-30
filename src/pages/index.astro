@@ -1,13 +1,33 @@
 ---
-import '@/styles/globals.css'; // For shadcn
+import { getEntry, getCollection } from "astro:content";
+import { Image } from "astro:assets";
+const indexData = await getEntry("index", "index");
 
-import Welcome from '../components/Welcome.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Welcome from "@components/Welcome.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { getEntry } from 'astro:content';
-const indexData = await getEntry('index', 'index');
+import schoolImage from "@assets/school.jpg";
 ---
 
-<BaseLayout title={indexData.title}>
-	<Welcome />
+<BaseLayout title={indexData.data.title}>
+    <Image
+        src={schoolImage}
+        alt="The school <Otto-Hahn-Schule> in Frankfurt."
+    />
+    <main>
+        {
+            indexData.data.heading.forEach(
+                (textPart: { format: string; text: string }) => (
+                    <span
+                        class="font-medium"
+                        class:list={[
+                            { "text-cyan-700": textPart.format == "colored" },
+                        ]}
+                    >
+                        {textPart.text}
+                    </span>
+                ),
+            )
+        }
+    </main>
 </BaseLayout>
