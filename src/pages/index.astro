@@ -3,8 +3,11 @@ import { getEntry, getCollection } from "astro:content";
 import { Image } from "astro:assets";
 const indexData = await getEntry("index", "index");
 
-import Welcome from "@components/Welcome.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+if (indexData == undefined) {
+    throw new Error("Collection entry for the index page not found!");
+}
+
+import BaseLayout from "@BaseLayout";
 
 import schoolImage from "@assets/school.jpg";
 ---
@@ -14,20 +17,19 @@ import schoolImage from "@assets/school.jpg";
         src={schoolImage}
         alt="The school <Otto-Hahn-Schule> in Frankfurt."
     />
-    <main>
-        {
-            indexData.data.heading.forEach(
-                (textPart: { format: string; text: string }) => (
+    <main class="p-5 pt-8 bg-white rounded-xl relative -top-3">
+        <h1 class="font-medium text-[22px] text-center">
+            {
+                indexData.data.heading.map((textPart) => (
                     <span
-                        class="font-medium"
                         class:list={[
                             { "text-cyan-700": textPart.format == "colored" },
                         ]}
                     >
                         {textPart.text}
                     </span>
-                ),
-            )
-        }
+                ))
+            }
+        </h1>
     </main>
 </BaseLayout>
