@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+import Card from "./Card.astro";
+
+const exhibitors = await getCollection("exhibitors");
+if (!exhibitors) {
+    throw new Error(
+        "Collection entry for the exhibitor scroll card not found!",
+    );
+}
+---
+
+<Card class="overflow-x-hidden">
+    <ul class="flex gap-3 scroll-group">
+        {
+            exhibitors.map((exhibitor) => (
+                <li class="w-[120px] h-[120px] bg-[--container-color] flex justify-center items-center rounded-xl">
+                    <Image
+                        src={exhibitor.data.image}
+                        width="100"
+                        height="100"
+                        alt="test"
+                        class="max-w-[100px] max-h-[100px] w-auto h-auto"
+                    />
+                </li>
+            ))
+        }
+    </ul>
+    <ul class="flex gap-3 scroll-group" aria-hidden>
+        {
+            exhibitors.map((exhibitor) => (
+                <li class="w-[120px] h-[120px] bg-[--container-color] flex justify-center items-center rounded-xl">
+                    <Image
+                        src={exhibitor.data.image}
+                        width="100"
+                        height="100"
+                        alt="test"
+                        class="max-w-[100px] max-h-[100px] w-auto h-auto"
+                    />
+                </li>
+            ))
+        }
+    </ul>
+</Card>
+
+<style>
+    .scroll-group {
+        will-change: transform;
+        animation: scrolling 20s linear infinite;
+    }
+
+    @keyframes scrolling {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>

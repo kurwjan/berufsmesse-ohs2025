@@ -1,0 +1,60 @@
+---
+import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+
+import BaseLayout from "@BaseLayout";
+import Card from "@components/Card.astro";
+
+export async function getStaticPaths() {
+    const greetings = await getCollection("greetings");
+    return greetings.map((greeting) => ({
+        params: {
+            id: greeting.id,
+        },
+        props: { greeting },
+    }));
+}
+
+const { greeting } = Astro.props;
+const { Content } = await render(greeting);
+---
+
+<BaseLayout
+    title=`OHS2025 - ${greeting.data.name}`
+    heading={[
+        { format: "normal", text: "Grußwort von " },
+        { format: "colored", text: greeting.data.name },
+    ]}
+    image="2"
+>
+    <div id="greeting" class="flex flex-col items-center gap-4">
+        <div class="flex flex-col gap-[2px] items-center justify-center">
+            <Image
+                src={greeting.data.image}
+                width="250"
+                alt="test"
+                class="rounded-xl rounded-b-none"
+            />
+            <Card class="w-[250px] justify-center rounded-t-none">
+                {greeting.data.profession}
+            </Card>
+        </div>
+        <div class="text-start max-w-[500px] flex flex-col gap-4">
+            <Content />
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    @media only screen and (min-width: 700px) {
+        #greeting {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    #greeting div h3 {
+        font-size: 1.5rem;
+    }
+</style>

@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "@BaseLayout";
+import ExhibitorCard from "@components/ExhibitorCard.astro";
+
+const exhibitors = await getCollection("exhibitors");
+if (!exhibitors) {
+    throw new Error("Collection entry for the exhibitor page not found!");
+}
+---
+
+<BaseLayout
+    title="OHS2025 - Aussteller"
+    heading={[{ format: "normal", text: "Aussteller" }]}
+    image="1"
+>
+    <div class="grid gap-4 responsive justify-center">
+        {exhibitors.map((exhibitor) => <ExhibitorCard exhibitor={exhibitor} />)}
+    </div>
+</BaseLayout>
+
+<style>
+    .responsive {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
+    }
+</style>

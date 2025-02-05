@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { LucideUser } from "lucide-vue-next";
+
+import CardGroup from "@components/CardGroup.astro";
+import Tile from "@components/Tile.astro";
+import LinkTile from "@components/LinkTile.astro";
+
+const greetings = await getCollection("greetings");
+if (!greetings) {
+    throw new Error("Collection entry for the greeting cards not found!");
+}
+---
+
+<CardGroup>
+    <Tile heading="Grußworte">
+        <LucideUser slot="icon" />
+    </Tile>
+    {
+        greetings.map((greeting) => (
+            <LinkTile href=`/grussworte/${greeting.id}` heading={greeting.data.name}>
+                <Image
+                    src={greeting.data.image}
+                    alt="test"
+                    width="70"
+                    height="90"
+                    class="max-w-[70px] max-h-[90px] w-auto h-auto rounded-xl"
+                    slot="icon"
+                />
+                <p slot="content">{greeting.data.profession}</p>
+            </LinkTile>
+        ))
+    }
+</CardGroup>

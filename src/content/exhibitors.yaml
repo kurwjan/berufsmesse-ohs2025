@@ -1,0 +1,235 @@
+- name: Staatliche Schlösser und Gärten Hessen
+  image: ../assets/exhibitors/staatliche_schloesser.png
+  link: https://www.schloesser-hessen.de/
+  slug: staatliche-schloesser
+  jobs:
+    - Zierpflanzengärtner/in
+    - Veranstaltungskaufmann/Kauffrau
+
+- name: dm-drogerie markt GmbH + Co. KG
+  image: ../assets/exhibitors/dm.png
+  link: https://www.dm-jobs.de/dein-berufsstart
+  slug: dm
+  jobs:
+    - Drogist (w/m/d)
+  education:
+    - Duales Studium BWL-Handel Schwerpunkt Filiale (B.A.)
+
+- name: AIFS Educational Travel
+  image: ../assets/exhibitors/aifs.png
+  link: https://www.aifs.de/
+  description: "Auslandsaufenthalte weltweit mit AIFS Educational Travel:"
+  slug: aifs
+  descriptionList:
+    - Au Pair
+    - Work and Travel
+    - Farm- & Ranchwork
+    - Freiwilligenarbeit
+    - Sommerjobs in den USA (Camp America)
+    - Auslandspraktikum
+    - Studieren im Ausland
+    - Adventure Trips
+    - Sprachreise
+    - Surfcamps
+
+- name: Mainmetall Großhandelsges. m.b.H.
+  image: ../assets/exhibitors/mainmetall.png
+  link: https://www.mainmetall.de/karriere
+  slug: mainmetall
+  jobs:
+    - Kaufleute für Groß- und Außenhandelsmanagement
+    - Kaufleute für Büromanagement
+    - Fachlageristen
+
+- name: Mainova AG
+  image: ../assets/partners/mainova.svg
+  link: https://mainova.de/karriere
+  slug: mainova
+  jobs:
+    - Anlagenmechaniker für Rohrsystemtechnik
+    - Elektroniker für Betriebstechnik
+    - Industrieelektriker
+    - Mechatroniker
+    - Industriemechaniker
+    - Konstruktionsmechaniker
+    - Fachinformatiker für Systemintegration
+    - IT-System-Elektroniker
+    - Industriekaufmann
+    - Kaufmann für Büromanagement
+  education:
+    - Energiewirtschaft
+    - Elektrotechnik
+    - Maschinenbau
+    - Bauingenieurwesen
+    - Wirtschaftsingenieurwesen
+    - Business Administration
+
+- name: Creative Change e.V.
+  image: ../assets/exhibitors/creative_change.png
+  link: https://cc-ev.de/
+  slug: creative_change
+  jobs:
+    - Ausbildung Kauffrau/-mann für Büromanagement
+  education:
+    - Duale Studenten BWL oder soziale Arbeit
+  other:
+    - Bundesfreiwilligendienst
+    - Jahrespraktikanten
+
+- name: Städtische Bühnen Frankfurt am Main GmbH
+  image: ../assets/exhibitors/städtische_bühnen.png
+  link: https://www.buehnen-frankfurt.de/
+  slug: staedtische-buehnen
+  jobs:
+    - Fachkräfte für Veranstaltungstechnik
+    - "Maßschneider*in Fachrichtung: Herren"
+    - Maßschuhmacher*in
+    - Bühnenmaler*in und –plastiker*in
+    - Maskenbildner*in,
+    - Fachinformatiker*in für Systemintegration
+    - Tischler*in
+    - Raumausstatter*in
+  education:
+    - Duales Studium B.A. Business Administration
+
+- name: Deichmann SE
+  image: ../assets/exhibitors/deichmann.svg
+  link: https://www.deichmann-karriere.de/
+  slug: deichmann
+  jobs:
+    - Verkäufer (m/w/d)
+    - Kaufmann im Einzelhandel (m/w/d)
+    - Handelsfachwirt (m/w/d)
+  education:
+    - Duales Studium B.A. (m/w/d)
+    - BWL - Handelsmanagement
+
+- name: Finanzamt Frankfurt am Main
+  image: ../assets/partners/finanzamt_frankfurt.png
+  link: https://finanzverwaltung-mein-job.hessen.de/
+  slug: finanzamt
+  jobs:
+    - Finanzwirt (Ausbildung)
+  education:
+    - Diplom-Finanzwirt (duales Studium)
+
+- name: Keßler Rohrleitungsbau HIRSCH GmbH
+  image: ../assets/exhibitors/hirsch.png
+  link: https://www.kessler-hirsch.de/
+  slug: hirsch
+  jobs:
+    - Tiefbaufacharbeiter Schwerpunkt Rohrleitungsbau
+    - Tiefbaufacharbeiter Schwerpunkt Straßenbau
+    - Industriekaufmann
+  education:
+    - Duales Studium Bauingenieur
+
+- name: Deutsche Leasing AG
+  image: ../assets/exhibitors/deutsche_leasing.svg
+  link: https://jobs.deutsche-leasing.com/
+  slug: deutsche_leasing
+  jobs:
+    - Kaufleute für Büromanagement (m/w/d)
+  education:
+    - Duales Studium Wirtschaftsinformatik (m/w/d)
+    - Duales Studium International Business Management (m/w/d)
+  other:
+    - Praktikum (m/w/d)
+
+- name: DACHSER SE Logistikzentrum Frankfurt
+  image: ../assets/exhibitors/dachser.svg
+  link: https://dachser.de
+  slug: dachser
+  jobs:
+    - Kaufmann/frau für Spedition und Logistikdienstleistung
+    - Kaufmann/frau für Büromanagement
+    - Ausbildung zum Fachlagerist
+    - Kaufmann/-frau für IT-Systemmanagement
+
+- name: Süwag Energie AG
+  image: ../assets/exhibitors/süwag.svg
+  link: https://www.suewag.com/corp/karriere
+  slug: suewag
+  jobs:
+    - Elektroniker für Betriebstechnik
+    - Fachinformatiker für Anwendungsentwicklung
+    - Fachinformatiker für Systemintegration
+    - Industriekaufleute
+    - Kaufleute für Büromanagement
+    - Kaufleute für Digitalisierungsmanagement
+  education:
+    - Bachelor of Science (BWL) ausbildungsintegriert
+    - Bachelor of Science (Wirtschaftsinformatik) ausbildungsintegriert
+
+- name: Alte Leipziger Lebensversicherung a.G.
+  image: ../assets/exhibitors/alte_leipziger.svg
+  link: https://www.alh.de/karriere/ausbildung-studium/ueberblick
+  slug: alte_leipziger
+  jobs:
+    - Kauffrau-mann für Versicherungen und Finanzanlagen
+    - Ausbildungen Fachinformatiker
+  education:
+    - Duale Studiengänge BWL
+
+- name: Deutsche Bank AG
+  image: ../assets/exhibitors/deutsche_bank.svg
+  link: https://careers.db.com/ausbildung-studium/
+  slug: deutsche_bank
+  jobs:
+    - Ausbildung Bankaukaufleute (d/m/w)
+    - Ausbildung Fachinformatiker*in Anwendungsentwicklung (d/m/w)
+    - Ausbildung Fachinformatiker*in Systemintegration (d/m/w)
+    - Ausbildung Kaufleute für Büromanagement Corporate Center (d/m/w)
+  education:
+    - Duales Studium BWL/Bank in der Corporate Bank (d/m/w)
+    - Duales Studium Informatik (Softwaretechnologie) (d/m/w)
+    - Duales Studium Wirtschaftsinformatik – Digital Corporate Banking (d/m/w)
+    - Duales Studium Business Administration - im Relationship und Transaction Management der Unternehmensbank (d/m/w)
+
+- name: Fachverband Garten-, Landschafts- und Sportplatzbau Hessen-Thüringen e. V.
+  image: ../assets/exhibitors/galabau.svg
+  link: https://www.landschaftsgaertner.com
+  slug: galabau
+  jobs:
+    - Landschaftsgärtner*in
+  education:
+    - Duales Studium Landschaftsgärtner*in oder Landschaftsarchitektur
+
+- name: iba | Internationale Berufsakademie der F+U Unternehmensgruppe gGmbH
+  image: ../assets/exhibitors/iba.png
+  link: https://ibadual.com
+  slug: iba
+  education:
+    - Duales Studium in den Bereichen Management, Soziales und Gesundheit
+
+- name: Deutsche Rentenversicherung Hessen
+  image: ../assets/exhibitors/drv.svg
+  link: https://ausbildung-drv-hessen.de/
+  slug: drv
+  jobs:
+    - Ausbildung zur/ zum Sozialversicherungsfachangestellten
+  education:
+    - Bachelor of Arts - Digitale Verwaltung
+    - Bachelor of Laws - Sozialversicherung - Rentenversicherung
+    - Bachelor of Laws - Betriebsprüfdienst
+    - Bachelor of Science - Wirtschaftsinformatik
+
+- name: IST-Hochschule
+  image: ../assets/exhibitors/ist.svg
+  link: https://www.ist-hochschule.de/
+  slug: ist
+  description: Diverse Studiengänge in verschiedenen Bereichen
+
+- name: Bundeswehr
+  image: ../assets/exhibitors/bundeswehr.svg
+  link: https://www.bundeswehr.de
+  slug: bundeswehr
+  description: Über 200 verschiedene Jobs, Ausbildungen und Studiengänge.
+
+- name: ALDI SÜD
+  image: ../assets/exhibitors/aldi.svg
+  link: https://karriere.aldi-sued.de/
+  slug: aldi
+  jobs:
+    - Ausbildung zum Verkäufer & Kaufmann im Einzelhandel (m/w/d)
+    - Abiturientenprogramm Handelsfachwirt Verkauf (m/w/d)

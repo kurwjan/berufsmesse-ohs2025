@@ -1,3 +1,7 @@
+---
+name: "EUPL-1.2"
+---
+
 OPEN-SOURCE-LIZENZ FÜR DIE EUROPÄISCHE UNION v. 1.2
 EUPL © Europäische Union 2007, 2016
 Diese Open-Source-Lizenz für die Europäische Union („EUPL“) gilt für Werke (im Sinne der nachfolgenden Begriffsbestimmung), die unter EUPL-Bedingungen zur Verfügung gestellt werden. Das Werk darf nur in der durch diese Lizenz gestatteten Form genutzt werden (insoweit eine solche Nutzung dem Urheber vorbehalten ist).

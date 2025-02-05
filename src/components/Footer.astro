@@ -1,0 +1,159 @@
+---
+import { Image } from "astro:assets";
+
+import schoolLogo from "@assets/school_logo.png";
+import skillConnectLogo from "@assets/skill_connect.png";
+import {
+    LucideCode,
+    LucideGlobe,
+    LucideHistory,
+    LucideMail,
+    LucideScrollText,
+    LucideUser,
+} from "lucide-vue-next";
+import FooterLink from "./FooterLink.astro";
+---
+
+<footer class="flex flex-col flex-1">
+    <div
+        class="flex pc-footer justify-between text-xs p-3 pt-0 pb-5 relative -bottom-2 bg-[--dark-container-color] rounded-b-xl"
+    >
+        <div class="flex flex-col gap-2 pc-row">
+            <Image src={schoolLogo} width="100" height="60" alt="dsfsdfdsf" />
+            <div class="flex flex-col gap-1">
+                <FooterLink
+                    link="https://ohs-frankfurt.de"
+                    class="bg-[--darker-container-color] active:bg-[--darkest-container-color] hover:bg-[--darkest-container-color] footer-link"
+                >
+                    <LucideGlobe size={16} /> Die Schule
+                </FooterLink>
+                <FooterLink
+                    link="https://ohs-frankfurt.de/01-03-2024-erste-berufsmesse-an-der-ohs/"
+                    class="bg-[--darker-container-color] active:bg-[--darkest-container-color] hover:bg-[--darkest-container-color] footer-link"
+                >
+                    <LucideHistory size={16} /> Messe letztes Jahr
+                </FooterLink>
+                <div
+                    class="flex gap-1 p-1 bg-[--darker-container-color] rounded-md footer-link"
+                >
+                    <LucideUser size={16} />
+                    <div>
+                        Hauptorganisatorin<br />
+                        <span class="font-light">Julia Csehan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-2 items-end pc-row pc-reverse-row">
+            <Image
+                src={skillConnectLogo}
+                width="100"
+                height="60"
+                alt="dsfsdfdsf"
+            />
+            <div class="flex flex-col text-end items-end gap-1">
+                <FooterLink
+                    link="https://www.skill-connect.de/"
+                    class="bg-[--darker-container-color] active:bg-[--darkest-container-color] hover:bg-[--darkest-container-color] footer-link skill-connect"
+                >
+                    Webseite <LucideGlobe size={16} />
+                </FooterLink>
+                <FooterLink
+                    link="mailto:hans-peter.neeb@skill-connect.de"
+                    class="bg-[--darker-container-color] active:bg-[--darkest-container-color] hover:bg-[--darkest-container-color] footer-link skill-connect"
+                >
+                    <div>
+                        Ansprechpartner<br />
+                        <span class="font-light">Hans-Peter Neeb </span>
+                    </div>
+                    <LucideMail size={16} />
+                </FooterLink>
+            </div>
+        </div>
+    </div>
+    <div
+        class="flex flex-col gap-2 text-[10px] bg-[--darker-container-color] pt-5 pb-4 flex-1"
+    >
+        <p class="text-center text-[11px]">Made by Dacjan Gapinski</p>
+        <div class="flex gap-3 justify-center w-full">
+            <FooterLink
+                link="https://dacjan.de"
+                class="hover:bg-[--pressed-darkest-container-color] active:bg-[--pressed-darkest-container-color] bg-[--darkest-container-color]"
+            >
+                <LucideGlobe size={16} /> Webseite
+            </FooterLink>
+            <FooterLink
+                link="https://github.com/kurwjan/berufsmesse-ohs2025"
+                class="hover:bg-[--pressed-darkest-container-color] active:bg-[--pressed-darkest-container-color] bg-[--darkest-container-color]"
+            >
+                <LucideCode size={16} /> Quellcode
+            </FooterLink>
+            <FooterLink
+                link="/impressum"
+                class="hover:bg-[--pressed-darkest-container-color] active:bg-[--pressed-darkest-container-color] bg-[--darkest-container-color]"
+            >
+                <LucideScrollText size={16} /> Impressum
+            </FooterLink>
+        </div>
+    </div>
+</footer>
+
+<style>
+    @media only screen and (min-width: 700px) {
+        .pc-row {
+            flex-direction: row;
+            align-items: initial;
+        }
+
+        .pc-row div {
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .pc-row div a {
+            align-items: center;
+        }
+
+        .pc-row div div {
+            align-items: center;
+        }
+
+        .footer-link {
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+    }
+
+    @media only screen and (min-width: 700px) and (max-width: 1000px) {
+        .pc-footer {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .pc-row:nth-child(2n) {
+            flex-basis: 100%;
+        }
+
+        .pc-row {
+            justify-content: center;
+        }
+
+        .skill-connect {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        .pc-reverse-row {
+            flex-direction: row-reverse;
+        }
+
+        .skill-connect {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+</style>

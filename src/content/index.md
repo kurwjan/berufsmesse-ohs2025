@@ -4,6 +4,7 @@ heading:
   - format: normal
     text: Berufs- und Ausbildungsmesse
   - format: colored
+    newline: true
     text: OHS 2025
 ---
 

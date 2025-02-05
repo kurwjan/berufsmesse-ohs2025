@@ -1,15 +1,61 @@
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection, z } from "astro:content";
+import { glob, file } from "astro/loaders";
 
 const index = defineCollection({
-    loader: glob({ pattern: "index.md", base: "./src/content" }),
-    schema: z.object({
-        title: z.string(),
-        heading: z.object({
-            format: z.enum(["normal", "colored"] as const),
-            text: z.string()
-        }).array(),
-    })
+  loader: glob({ pattern: "index.md", base: "./src/content" }),
+  schema: z.object({
+    title: z.string(),
+    heading: z
+      .object({
+        format: z.enum(["normal", "colored"] as const),
+        text: z.string(),
+        newline: z.boolean().optional(),
+      })
+      .array(),
+  }),
 });
 
-export const collections = { index };
+const exhibitors = defineCollection({
+  loader: file("./src/content/exhibitors.yaml"),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      image: image(),
+      link: z.string(),
+      jobs: z.string().array().optional(),
+      education: z.string().array().optional(),
+      descriptionList: z.string().array().optional(),
+      description: z.string().optional(),
+      other: z.string().array().optional(),
+    }),
+});
+
+const greetings = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/greetings" }),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      profession: z.string(),
+      image: image(),
+    }),
+});
+
+const partners = defineCollection({
+  loader: file("./src/content/partners.yaml"),
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      link: z.string(),
+      image: image(),
+      height: z.number().optional(),
+    }),
+});
+
+const license = defineCollection({
+  loader: glob({ pattern: "license.md", base: "./src/content" }),
+  schema: z.object({
+    name: z.string(),
+  }),
+});
+
+export const collections = { index, exhibitors, greetings, partners, license };

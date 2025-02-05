@@ -1,0 +1,23 @@
+---
+import { parseHTML } from "linkedom";
+
+const slotHtml = await Astro.slots.render("default");
+const { document } = parseHTML(slotHtml);
+const children = document.children;
+const count = children.length;
+
+if (count != 1) {
+    children[0].classList.add("!rounded-t-xl !rounded-b-none");
+    children[count - 1].classList.add("!rounded-b-xl !rounded-t-none");
+
+    for (let i = 1; i < count - 1; i++) {
+        children[i].classList.add("!rounded-none");
+    }
+}
+
+const { ...rest } = Astro.props;
+---
+
+<div class="flex flex-col gap-[2px]" {...rest}>
+    <Fragment set:html={document} />
+</div>

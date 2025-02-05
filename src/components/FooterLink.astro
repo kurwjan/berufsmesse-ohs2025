@@ -1,0 +1,12 @@
+---
+interface Props {
+    link: string;
+    class?: string;
+}
+
+const { link, class: className, ...rest } = Astro.props;
+---
+
+<a class=`flex w-fit gap-1 p-1 rounded-md ${className}` href={link} {...rest}>
+    <slot />
+</a>

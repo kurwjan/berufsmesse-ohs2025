@@ -1,0 +1,18 @@
+---
+import { getEntry, render } from "astro:content";
+
+import BaseLayout from "@BaseLayout";
+
+const licenseData = await getEntry("license", "license");
+if (!licenseData) {
+    throw new Error("No license entry found!");
+}
+const { Content } = await render(licenseData);
+---
+
+<BaseLayout
+    title=`OHS2025 - ${ licenseData.data.name }`
+    heading={[{ format: "normal", text: licenseData.data.name }]}
+>
+    <Content />
+</BaseLayout>

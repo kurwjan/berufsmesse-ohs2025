@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { LucideHandshake } from "lucide-vue-next";
+
+import CardGroup from "@components/CardGroup.astro";
+import Tile from "@components/Tile.astro";
+import Card from "@components/Card.astro";
+
+const partners = await getCollection("partners");
+if (!partners) {
+    throw new Error("Collection entry for the partner cards not found!");
+}
+---
+
+<CardGroup id="partners">
+    <Tile
+        heading="Silber Partner"
+        class="bg-gradient-to-r from-gray-400 from-0% via-gray-200 via-30% to-gray-400 to-100% text-gray-700"
+    >
+        <LucideHandshake slot="icon" />
+    </Tile>
+    {
+        partners.map((partner) => (
+            <a href={partner.data.link}>
+                <Card class="!rounded-[inherit] flex justify-center items-center bg-gradient-to-r from-gray-300 from-0% via-gray-100 via-30% to-gray-300 to-100% hover:from-gray-400 hover:via-gray-200 hover:to-gray-400 active:from-gray-400 active:via-gray-200 active:to-gray-400">
+                    <Image
+                        src={partner.data.image}
+                        alt="test"
+                        width="150"
+                        height={partner.data.height ?? "150"}
+                        style=`max-height: ${partner.data.height ?? 150}px`
+                        class=`max-w-[150px] w-auto h-auto`
+                    />
+                </Card>
+            </a>
+        ))
+    }
+</CardGroup>
+
+<style>
+    @media only screen and (min-width: 700px) {
+        #partners {
+            width: 100%;
+        }
+    }
+</style>

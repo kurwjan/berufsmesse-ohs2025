@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import schoolLogo from "@assets/school_logo.png";
+
+import Menu from "@components/Menu.vue";
+
+const greetings = await getCollection("greetings");
+if (!greetings) {
+    throw new Error("Collection entry for the header not found!");
+}
+---
+
+<div class="min-h-[70px] h-[70px] bg-white"></div>
+<header
+    class="flex justify-between items-center fixed w-full h-[70px] z-[1001] top-0 px-4 py-2 border-b border-black backdrop-blur-xl bg-white/85"
+>
+    <a href="/" class="mobile-menu hover:bg-neutral-100 rounded-md p-2">
+        <Image src={schoolLogo} alt="The school logo." width="77" />
+    </a>
+    <nav id="pc-menu" class="hidden justify-between items-center">
+        <a href="/" class="hover:bg-neutral-100 rounded-md p-2 mr-4">
+            <Image src={schoolLogo} alt="The school logo." width="77" />
+        </a>
+        <a
+            href="/aussteller"
+            data-astro-prefetch="load"
+            class="hover:bg-neutral-100 rounded-md p-2"
+        >
+            Aussteller
+        </a>
+        {
+            greetings.map((greeting) => (
+                <a
+                    href={`/grussworte/${greeting.id}`}
+                    class="hover:bg-neutral-100 rounded-md p-2"
+                >
+                    {greeting.data.name}
+                </a>
+            ))
+        }
+    </nav>
+    <div class="mobile-menu">
+        <Menu
+            client:load
+            greetings={greetings.map((greeting) => ({
+                name: greeting.data.name,
+                id: greeting.id,
+            }))}
+            endpoint={Astro.url.pathname}
+        />
+    </div>
+</header>
+
+<style>
+    @media only screen and (min-width: 800px) {
+        header {
+            justify-content: start;
+            gap: 1rem;
+        }
+
+        #pc-menu {
+            display: flex;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+    }
+</style>

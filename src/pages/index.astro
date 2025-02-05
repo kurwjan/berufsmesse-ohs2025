@@ -1,35 +1,95 @@
 ---
-import { getEntry, getCollection } from "astro:content";
-import { Image } from "astro:assets";
-const indexData = await getEntry("index", "index");
-
-if (indexData == undefined) {
-    throw new Error("Collection entry for the index page not found!");
-}
+import { getEntry, getCollection, render } from "astro:content";
+import {
+    LucideBuilding2,
+    LucideCalendar,
+    LucideMap,
+    LucideMapPin,
+    LucidePresentation,
+} from "lucide-vue-next";
 
 import BaseLayout from "@BaseLayout";
+import Tile from "@components/Tile.astro";
+import LinkTile from "@components/LinkTile.astro";
+import CardGroup from "@components/CardGroup.astro";
+import ExhibitorScrollCard from "@components/ExhibitorScrollCard.astro";
 
-import schoolImage from "@assets/school.jpg";
+import GreetingsGroup from "@components/GreetingsGroup.astro";
+import PartnerGroup from "@/components/PartnerGroup.astro";
+import Map from "@/components/Map.astro";
+import Card from "@/components/Card.astro";
+
+const indexData = await getEntry("index", "index");
+if (!indexData) {
+    throw new Error("Collection entry for the index page not found!");
+}
+const { Content } = await render(indexData);
 ---
 
-<BaseLayout title={indexData.data.title}>
-    <Image
-        src={schoolImage}
-        alt="The school <Otto-Hahn-Schule> in Frankfurt."
-    />
-    <main class="p-5 pt-8 bg-white rounded-xl relative -top-3">
-        <h1 class="font-medium text-[22px] text-center">
-            {
-                indexData.data.heading.map((textPart) => (
-                    <span
-                        class:list={[
-                            { "text-cyan-700": textPart.format == "colored" },
-                        ]}
-                    >
-                        {textPart.text}
-                    </span>
-                ))
-            }
-        </h1>
-    </main>
+<BaseLayout title={indexData.data.title} heading={indexData.data.heading}>
+    <Content slot="description" />
+    <div id="date_location" class="flex flex-col gap-4">
+        <Tile heading="Datum">
+            <LucideCalendar slot="icon" />
+            <p slot="content">
+                Freitag, 23. Februar 2024<br />
+                9:40 Uhr bis 15:30 Uhr
+            </p>
+        </Tile>
+        <CardGroup id="location">
+            <Tile heading="Standort">
+                <LucideMapPin slot="icon" />
+                <p slot="content">
+                    Urseler Weg 27, Nieder-Eschbach,<br />
+                    60437 Frankfurt
+                </p>
+            </Tile>
+            <Card class="!items-center !justify-center">
+                <Map />
+            </Card>
+        </CardGroup>
+    </div>
+    <CardGroup>
+        <LinkTile heading="Aussteller" href="/aussteller" prefetch="load">
+            <LucideBuilding2 slot="icon" />
+        </LinkTile>
+        <ExhibitorScrollCard />
+    </CardGroup>
+    <CardGroup>
+        <LinkTile heading="Hallenplan" href="/">
+            <LucideMap slot="icon" />
+        </LinkTile>
+        <LinkTile heading="Vorträge / Workshops" href="/">
+            <LucidePresentation slot="icon" />
+        </LinkTile>
+    </CardGroup>
+    <div
+        id="pc_greetings_partners"
+        class="hidden grid-cols-2 gap-1 justify-between"
+    >
+        <GreetingsGroup />
+        <PartnerGroup />
+    </div>
+    <div class="flex flex-col gap-4 mobile">
+        <GreetingsGroup />
+        <PartnerGroup />
+    </div>
 </BaseLayout>
+
+<style>
+    @media only screen and (min-width: 700px) {
+        #date_location {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.25rem;
+        }
+
+        #location {
+            width: 100%;
+        }
+
+        #pc_greetings_partners {
+            display: grid;
+        }
+    }
+</style>

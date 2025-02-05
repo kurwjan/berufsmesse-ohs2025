@@ -1,0 +1,103 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+import Card from "@components/Card.astro";
+import { LucideGlobe } from "lucide-vue-next";
+
+interface Props {
+    exhibitor: CollectionEntry<"exhibitors">;
+}
+const { exhibitor } = Astro.props;
+---
+
+<Card class="flex-col text-start text-[14px] !items-start">
+    <div class="flex items-center gap-3">
+        <Card
+            class="!bg-[--container-color] min-w-[90px] min-h-[90px] justify-center"
+        >
+            <Image
+                src={exhibitor.data.image}
+                width="66"
+                height="66"
+                class="max-w-[66px] max-h-[66px] w-auto h-auto"
+                alt="sdfsdfsdfsdf"
+            />
+        </Card>
+        <div>
+            <h3 class="font-medium text-[14pt]">{exhibitor.data.name}</h3>
+            <a
+                class="flex items-center text-xs w-fit gap-1 p-1 bg-[--dark-primary-container-color] rounded-md hover:bg-[--pressed-dark-primary-container-color] active:bg-[--pressed-dark-primary-container-color]"
+                href={exhibitor.data.link}
+            >
+                <LucideGlobe size={16} /> Webseite
+            </a>
+        </div>
+    </div>
+    <div class="flex flex-col gap-2">
+        {
+            (exhibitor.data.description != null ||
+                exhibitor.data.descriptionList != null) && (
+                <div>
+                    {exhibitor.data.description != null && (
+                        <p>{exhibitor.data.description}</p>
+                    )}
+                    {exhibitor.data.descriptionList != null && (
+                        <ul class="list-disc pl-6 break-words hyphens-auto">
+                            {exhibitor.data.descriptionList.map(
+                                (descriptionList) => (
+                                    <li>{descriptionList}</li>
+                                ),
+                            )}
+                        </ul>
+                    )}
+                </div>
+            )
+        }
+        {
+            exhibitor.data.jobs != null && (
+                <div>
+                    <h5 class="font-medium">
+                        Berufe/Ausbildungen:
+                        <br />
+                    </h5>
+                    <ul class="list-disc pl-6 break-words hyphens-auto">
+                        {exhibitor.data.jobs.map((job) => (
+                            <li>{job}</li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        }
+        {
+            exhibitor.data.education != null && (
+                <div>
+                    <h5 class="font-medium">
+                        (Duale-)Studiengänge:
+                        <br />
+                    </h5>
+                    <ul class="list-disc pl-6 hyphens-auto">
+                        {exhibitor.data.education.map((education) => (
+                            <li>{education}</li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        }
+        {
+            exhibitor.data.other != null && (
+                <div>
+                    <h5 class="font-medium">
+                        Andere:
+                        <br />
+                    </h5>
+                    <ul class="list-disc pl-6 hyphens-auto">
+                        {exhibitor.data.other.map((other) => (
+                            <li>{other}</li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        }
+    </div>
+</Card>

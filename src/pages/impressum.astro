@@ -1,0 +1,65 @@
+---
+import BaseLayout from "@BaseLayout";
+---
+
+<BaseLayout
+    title="OHS2025 - Impressum"
+    heading={[{ format: "normal", text: "Impressum" }]}
+    image="3"
+>
+    <div id="content" class="text-center flex flex-col gap-4">
+        <p>Verantwortlich für diese Seite ist</p>
+        <p>
+            <b>
+                Otto-Hahn-Schule<br />
+            </b>
+            <span class="flex flex-col gap-2">
+                <span>
+                    Urseler Weg 27<br />
+                    60437 Frankfurt<br />
+                </span>
+                <span>
+                    Tel.: 069 – 212 44200<br />
+                    Fax.: 069 – 212 44211<br />
+                    E-Mail:
+                    <a
+                        href="mailto:Poststelle.Otto-Hahn-Schule@Stadt-Frankfurt.de"
+                        class="text-[--primary-color]"
+                        >Poststelle.Otto-Hahn-Schule@Stadt-Frankfurt.de</a
+                    ><br />
+                    Homepage:
+                    <a
+                        href="https://ohs-frankfurt.de/"
+                        class="text-[--primary-color]"
+                        >https://ohs-frankfurt.de/</a
+                    ><br />
+                </span>
+                <span>
+                    Schulträger: Stadtschulamt Frankfurt am Main<br />
+                </span>
+                <span>
+                    <b>Verantwortliche Person:</b><br />
+                    Schulleiter: Herr Dirk Kapfenberger<br />
+                </span>
+            </span>
+        </p>
+        <p>
+            Die Seite wurde von Dacjan Gapinski (10GC) erstellt und der Code ist
+            unter der <a href="/lizenz" class="text-[--primary-color]"
+                >EUPL-1.2</a
+            >
+            lizensiert. Er ist <a
+                href="https://github.com/kurwjan/berufsmesse-ohs2025"
+                class="text-[--primary-color]">hier</a
+            > einsehbar.
+        </p>
+    </div>
+</BaseLayout>
+
+<style>
+    @media only screen and (min-width: 700px) {
+        #content {
+            text-align: start;
+        }
+    }
+</style>

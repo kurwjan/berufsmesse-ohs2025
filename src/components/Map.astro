@@ -1,0 +1,54 @@
+<div id="map"></div>
+
+<style>
+    #map {
+        width: 100%;
+        height: 30vw;
+        max-height: 300px;
+    }
+
+    @media only screen and (max-width: 700px) {
+        #map {
+            height: 40vw;
+            max-height: 500px;
+        }
+    }
+</style>
+
+<script>
+    import L from "leaflet";
+    import "leaflet/dist/leaflet.css";
+
+    let map = null;
+
+    function removeMap() {
+        if (map) {
+            map.off();
+            map.remove();
+            map = null;
+        }
+    }
+
+    function initialiseMap() {
+        if (document.querySelector("#map") == null) return;
+
+        map = L.map("map").setView([50.202369, 8.667094], 16);
+
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution:
+                '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }).addTo(map);
+    }
+
+    document.addEventListener("astro:before-swap", () => {
+        console.log("before swap");
+        removeMap();
+    });
+
+    document.addEventListener("astro:after-swap", () => {
+        initialiseMap();
+    });
+
+    initialiseMap();
+</script>
