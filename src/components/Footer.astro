@@ -88,12 +88,14 @@ import FooterLink from "./FooterLink.astro";
             >
                 <LucideCode size={16} /> Quellcode
             </FooterLink>
-            <FooterLink
-                link="/impressum"
-                class="hover:bg-[--pressed-darkest-container-color] active:bg-[--pressed-darkest-container-color] bg-[--darkest-container-color]"
-            >
-                <LucideScrollText size={16} /> Impressum
-            </FooterLink>
+            <div class="border-l-gray-400 border-l-2 border-solid pl-3">
+                <FooterLink
+                    link="/impressum"
+                    class="hover:bg-[--pressed-darkest-container-color] active:bg-[--pressed-darkest-container-color] bg-[--darkest-container-color]"
+                >
+                    <LucideScrollText size={16} /> Impressum
+                </FooterLink>
+            </div>
         </div>
     </div>
 </footer>

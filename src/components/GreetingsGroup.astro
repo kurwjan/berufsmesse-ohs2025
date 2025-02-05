@@ -22,7 +22,7 @@ if (!greetings) {
             <LinkTile href=`/grussworte/${greeting.id}` heading={greeting.data.name}>
                 <Image
                     src={greeting.data.image}
-                    alt="test"
+                    alt={`Portrait von ${greeting.data.name}, ${greeting.data.profession}`}
                     width="70"
                     height="90"
                     class="max-w-[70px] max-h-[90px] w-auto h-auto rounded-xl"

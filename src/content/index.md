@@ -1,11 +1,11 @@
 ---
-title: OHS2025
+title: OHS Zukunftschancen
 heading:
-  - format: normal
-    text: Berufs- und Ausbildungsmesse
   - format: colored
+    text: OHS
+  - format: normal
     newline: true
-    text: OHS 2025
+    text: Zukunftschancen
 ---
 
 Aliquid fugiat neque commodi numquam facere aut optio.

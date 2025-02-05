@@ -20,19 +20,19 @@ const { Content } = await render(greeting);
 ---
 
 <BaseLayout
-    title=`OHS2025 - ${greeting.data.name}`
+    title=`${greeting.data.name} - OHS Zukunftschancen`
     heading={[
         { format: "normal", text: "Grußwort von " },
         { format: "colored", text: greeting.data.name },
     ]}
-    image="2"
+    image={2}
 >
     <div id="greeting" class="flex flex-col items-center gap-4">
         <div class="flex flex-col gap-[2px] items-center justify-center">
             <Image
                 src={greeting.data.image}
                 width="250"
-                alt="test"
+                alt={`Portrait von ${greeting.data.name}, ${greeting.data.profession}`}
                 class="rounded-xl rounded-b-none"
             />
             <Card class="w-[250px] justify-center rounded-t-none">

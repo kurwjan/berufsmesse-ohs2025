@@ -18,6 +18,8 @@
 <script>
     import L from "leaflet";
     import "leaflet/dist/leaflet.css";
+    import "leaflet.fullscreen/Control.FullScreen.js";
+    import "leaflet.fullscreen/Control.FullScreen.css";
 
     let map = null;
 
@@ -32,7 +34,9 @@
     function initialiseMap() {
         if (document.querySelector("#map") == null) return;
 
-        map = L.map("map").setView([50.202369, 8.667094], 16);
+        map = L.map("map", {
+            fullscreenControl: true,
+        }).setView([50.202369, 8.667094], 16);
 
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
@@ -42,7 +46,6 @@
     }
 
     document.addEventListener("astro:before-swap", () => {
-        console.log("before swap");
         removeMap();
     });
 
