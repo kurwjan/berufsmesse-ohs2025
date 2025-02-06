@@ -25,8 +25,9 @@ if (!greetings) {
                     alt={`Portrait von ${greeting.data.name}, ${greeting.data.profession}`}
                     width="70"
                     height="90"
-                    class="max-w-[70px] max-h-[90px] w-auto h-auto rounded-xl"
+                    class="max-w-[70px] max-h-[90px] w-auto h-auto rounded-xl z-100"
                     slot="icon"
+                    transition:name={greeting.data.name}
                 />
                 <p slot="content">{greeting.data.profession}</p>
             </LinkTile>

@@ -3,7 +3,9 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 import Card from "@components/Card.astro";
-import { LucideGlobe } from "lucide-vue-next";
+import { LucideGlobe, LucideHandshake } from "lucide-vue-next";
+import CardGroup from "./CardGroup.astro";
+import Tile from "./Tile.astro";
 
 interface Props {
     exhibitor: CollectionEntry<"exhibitors">;
@@ -11,93 +13,111 @@ interface Props {
 const { exhibitor } = Astro.props;
 ---
 
-<Card class="flex-col text-start text-[14px] !items-start">
-    <div class="flex items-center gap-3">
-        <Card
-            class="!bg-[--container-color] min-w-[90px] min-h-[90px] justify-center"
-        >
-            <Image
-                src={exhibitor.data.image}
-                width="66"
-                height="66"
-                class="max-w-[66px] max-h-[66px] w-auto h-auto"
-                alt={`Logo von ${exhibitor.data.name}`}
-            />
-        </Card>
-        <div>
-            <h3 class="font-medium text-[14pt]">{exhibitor.data.name}</h3>
-            <a
-                class="flex items-center text-xs w-fit gap-1 p-1 bg-[--dark-primary-container-color] rounded-md hover:bg-[--pressed-dark-primary-container-color] active:bg-[--pressed-dark-primary-container-color]"
-                href={exhibitor.data.link}
+<CardGroup>
+    {
+        exhibitor.data.partner == true && (
+            <Tile
+                heading="Silber Partner"
+                class="bg-gradient-to-r from-gray-400 from-0% via-gray-200 via-30% to-gray-400 to-100% text-gray-700"
             >
-                <LucideGlobe size={16} /> Webseite
-            </a>
+                <LucideHandshake slot="icon" />
+            </Tile>
+        )
+    }
+    <Card
+        class={`flex-col text-start text-[14px] !items-start h-full
+    ${exhibitor.data.partner == true && "bg-gradient-to-r from-gray-300 from-0% via-gray-100 via-30% to-gray-300 to-100% text-gray-700"}`}
+    >
+        <div class="flex items-center gap-3">
+            <Card
+                class={`!bg-[--container-color] min-w-[90px] min-h-[90px] justify-center border-2 border-solid border-[--dark-primary-container-color]
+            ${exhibitor.data.partner == true && "!bg-gray-50 border-2 border-solid !border-gray-500"}`}
+            >
+                <Image
+                    src={exhibitor.data.image}
+                    width="66"
+                    height="66"
+                    class="max-w-[66px] max-h-[66px] w-auto h-auto"
+                    alt={`Logo von ${exhibitor.data.name}`}
+                />
+            </Card>
+            <div>
+                <h3 class="font-medium text-[14pt]">{exhibitor.data.name}</h3>
+                <a
+                    class={`flex items-center text-xs w-fit gap-1 p-1 bg-[--dark-primary-container-color]
+                rounded-md hover:bg-[--pressed-dark-primary-container-color] active:bg-[--pressed-dark-primary-container-color]
+                ${exhibitor.data.partner == true && "bg-gray-500 text-gray-200 hover:bg-gray-600 active:bg-gray-600"}`}
+                    href={exhibitor.data.link}
+                >
+                    <LucideGlobe size={16} /> Webseite
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="flex flex-col gap-2">
-        {
-            (exhibitor.data.description != null ||
-                exhibitor.data.descriptionList != null) && (
-                <div>
-                    {exhibitor.data.description != null && (
-                        <p>{exhibitor.data.description}</p>
-                    )}
-                    {exhibitor.data.descriptionList != null && (
+        <div class="flex flex-col gap-2">
+            {
+                (exhibitor.data.description != null ||
+                    exhibitor.data.descriptionList != null) && (
+                    <div>
+                        {exhibitor.data.description != null && (
+                            <p>{exhibitor.data.description}</p>
+                        )}
+                        {exhibitor.data.descriptionList != null && (
+                            <ul class="list-disc pl-6 break-words hyphens-auto">
+                                {exhibitor.data.descriptionList.map(
+                                    (descriptionList) => (
+                                        <li>{descriptionList}</li>
+                                    ),
+                                )}
+                            </ul>
+                        )}
+                    </div>
+                )
+            }
+            {
+                exhibitor.data.jobs != null && (
+                    <div>
+                        <h5 class="font-medium">
+                            Berufe/Ausbildungen:
+                            <br />
+                        </h5>
                         <ul class="list-disc pl-6 break-words hyphens-auto">
-                            {exhibitor.data.descriptionList.map(
-                                (descriptionList) => (
-                                    <li>{descriptionList}</li>
-                                ),
-                            )}
+                            {exhibitor.data.jobs.map((job) => (
+                                <li>{job}</li>
+                            ))}
                         </ul>
-                    )}
-                </div>
-            )
-        }
-        {
-            exhibitor.data.jobs != null && (
-                <div>
-                    <h5 class="font-medium">
-                        Berufe/Ausbildungen:
-                        <br />
-                    </h5>
-                    <ul class="list-disc pl-6 break-words hyphens-auto">
-                        {exhibitor.data.jobs.map((job) => (
-                            <li>{job}</li>
-                        ))}
-                    </ul>
-                </div>
-            )
-        }
-        {
-            exhibitor.data.education != null && (
-                <div>
-                    <h5 class="font-medium">
-                        (Duale-)Studiengänge:
-                        <br />
-                    </h5>
-                    <ul class="list-disc pl-6 hyphens-auto">
-                        {exhibitor.data.education.map((education) => (
-                            <li>{education}</li>
-                        ))}
-                    </ul>
-                </div>
-            )
-        }
-        {
-            exhibitor.data.other != null && (
-                <div>
-                    <h5 class="font-medium">
-                        Andere:
-                        <br />
-                    </h5>
-                    <ul class="list-disc pl-6 hyphens-auto">
-                        {exhibitor.data.other.map((other) => (
-                            <li>{other}</li>
-                        ))}
-                    </ul>
-                </div>
-            )
-        }
-    </div>
-</Card>
+                    </div>
+                )
+            }
+            {
+                exhibitor.data.education != null && (
+                    <div>
+                        <h5 class="font-medium">
+                            (Duale-)Studiengänge:
+                            <br />
+                        </h5>
+                        <ul class="list-disc pl-6 hyphens-auto">
+                            {exhibitor.data.education.map((education) => (
+                                <li>{education}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            }
+            {
+                exhibitor.data.other != null && (
+                    <div>
+                        <h5 class="font-medium">
+                            Andere:
+                            <br />
+                        </h5>
+                        <ul class="list-disc pl-6 hyphens-auto">
+                            {exhibitor.data.other.map((other) => (
+                                <li>{other}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            }
+        </div>
+    </Card>
+</CardGroup>

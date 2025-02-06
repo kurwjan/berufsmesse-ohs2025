@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
 import { Button } from "@components/ui/button";
 import {
     LucideBuilding2,
@@ -17,10 +18,15 @@ import {
     SheetTrigger,
 } from "@components/ui/sheet";
 
-const { greetings, endpoint } = defineProps<{
+const { greetings } = defineProps<{
     greetings: { name: string; id: string }[];
-    endpoint: string;
 }>();
+
+const pathname = ref<string>("");
+
+onMounted(() => {
+    pathname.value = window.location.pathname;
+});
 </script>
 
 <template>
@@ -42,7 +48,7 @@ const { greetings, endpoint } = defineProps<{
                         class="flex justify-between p-3 rounded-xl bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color]"
                         :class="{
                             '!bg-[--pressed-primary-container-color]':
-                                endpoint == '/',
+                                pathname == '/',
                         }"
                     >
                         <div class="flex gap-2"><LucideHouse />Start</div>
@@ -55,7 +61,7 @@ const { greetings, endpoint } = defineProps<{
                         class="flex justify-between p-3 rounded-xl bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color]"
                         :class="{
                             '!bg-[--pressed-primary-container-color]':
-                                endpoint == '/aussteller',
+                                pathname == '/aussteller',
                         }"
                     >
                         <div class="flex gap-2">
@@ -80,7 +86,7 @@ const { greetings, endpoint } = defineProps<{
                                 index != 0 &&
                                 index != greetings.length - 1,
                             '!bg-[--pressed-primary-container-color]':
-                                endpoint == `/grussworte/${greeting.id}`,
+                                pathname == `/grussworte/${greeting.id}`,
                         }"
                     >
                         <div class="flex gap-2">

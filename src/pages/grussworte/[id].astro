@@ -34,6 +34,7 @@ const { Content } = await render(greeting);
                 width="250"
                 alt={`Portrait von ${greeting.data.name}, ${greeting.data.profession}`}
                 class="rounded-xl rounded-b-none"
+                transition:name={greeting.data.name}
             />
             <Card class="w-[250px] justify-center rounded-t-none">
                 {greeting.data.profession}

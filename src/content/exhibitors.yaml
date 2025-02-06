@@ -1,3 +1,37 @@
+- name: Mainova AG
+  partner: true
+  image: ../assets/partners/mainova.svg
+  link: https://mainova.de/karriere
+  slug: mainova
+  jobs:
+    - Anlagenmechaniker für Rohrsystemtechnik
+    - Elektroniker für Betriebstechnik
+    - Industrieelektriker
+    - Mechatroniker
+    - Industriemechaniker
+    - Konstruktionsmechaniker
+    - Fachinformatiker für Systemintegration
+    - IT-System-Elektroniker
+    - Industriekaufmann
+    - Kaufmann für Büromanagement
+  education:
+    - Energiewirtschaft
+    - Elektrotechnik
+    - Maschinenbau
+    - Bauingenieurwesen
+    - Wirtschaftsingenieurwesen
+    - Business Administration
+
+- name: Finanzamt Frankfurt am Main
+  partner: true
+  image: ../assets/partners/finanzamt_frankfurt.png
+  link: https://finanzverwaltung-mein-job.hessen.de/
+  slug: finanzamt
+  jobs:
+    - Finanzwirt (Ausbildung)
+  education:
+    - Diplom-Finanzwirt (duales Studium)
+
 - name: Staatliche Schlösser und Gärten Hessen
   image: ../assets/exhibitors/staatliche_schloesser.png
   link: https://www.schloesser-hessen.de/
@@ -41,29 +75,6 @@
     - Kaufleute für Büromanagement
     - Fachlageristen
 
-- name: Mainova AG
-  image: ../assets/partners/mainova.svg
-  link: https://mainova.de/karriere
-  slug: mainova
-  jobs:
-    - Anlagenmechaniker für Rohrsystemtechnik
-    - Elektroniker für Betriebstechnik
-    - Industrieelektriker
-    - Mechatroniker
-    - Industriemechaniker
-    - Konstruktionsmechaniker
-    - Fachinformatiker für Systemintegration
-    - IT-System-Elektroniker
-    - Industriekaufmann
-    - Kaufmann für Büromanagement
-  education:
-    - Energiewirtschaft
-    - Elektrotechnik
-    - Maschinenbau
-    - Bauingenieurwesen
-    - Wirtschaftsingenieurwesen
-    - Business Administration
-
 - name: Creative Change e.V.
   image: ../assets/exhibitors/creative_change.png
   link: https://cc-ev.de/
@@ -103,15 +114,6 @@
   education:
     - Duales Studium B.A. (m/w/d)
     - BWL - Handelsmanagement
-
-- name: Finanzamt Frankfurt am Main
-  image: ../assets/partners/finanzamt_frankfurt.png
-  link: https://finanzverwaltung-mein-job.hessen.de/
-  slug: finanzamt
-  jobs:
-    - Finanzwirt (Ausbildung)
-  education:
-    - Diplom-Finanzwirt (duales Studium)
 
 - name: Keßler Rohrleitungsbau HIRSCH GmbH
   image: ../assets/exhibitors/hirsch.png

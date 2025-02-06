@@ -1,9 +1,9 @@
 - name: Mainova
-  link: https://www.mainova.de/de
+  link: https://mainova.de/karriere
   image: ../assets/partners/mainova.svg
   slug: mainova
 - name: Finanzamt Frankfurt
-  link: https://finanzamt.hessen.de/service/finanzaemter-in-hessen/finanzamt-frankfurt-am-main
+  link: https://finanzverwaltung-mein-job.hessen.de/
   image: ../assets/partners/finanzamt_frankfurt.png
   height: 139
   slug: finanzamt-frankfurt

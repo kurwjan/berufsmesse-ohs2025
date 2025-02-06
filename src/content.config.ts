@@ -20,6 +20,7 @@ const exhibitors = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
+      partner: z.boolean().optional(),
       image: image(),
       link: z.string(),
       jobs: z.string().array().optional(),
