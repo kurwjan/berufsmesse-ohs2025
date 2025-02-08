@@ -1,0 +1,876 @@
+<div id="hallenMap" class="label"></div>
+
+<style is:global>
+    #hallenMap {
+        width: 100%;
+        height: 24rem;
+    }
+
+    @media only screen and (min-width: 700px) {
+        #hallenMap {
+            height: 48rem;
+        }
+    }
+
+    .leaflet-tooltip.my-label {
+        background-color: transparent;
+        border: transparent;
+        box-shadow: none;
+
+        text-align: start;
+    }
+</style>
+
+<script>
+    import L from "leaflet";
+    import "leaflet-rotate/dist/leaflet-rotate.js";
+    import "leaflet/dist/leaflet.css";
+    import "leaflet.fullscreen/Control.FullScreen.js";
+    import "leaflet.fullscreen/Control.FullScreen.css";
+    import type { REC_2100_PQ } from "colorjs.io/fn";
+
+    const geojson = {
+        type: "FeatureCollection",
+        features: [
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.66750572621936, 50.20318754457776],
+                            [8.667540945083317, 50.20319452262498],
+                            [8.667535494053794, 50.203205793837554],
+                            [8.667500275189866, 50.20319881579195],
+                            [8.66750572621936, 50.20318754457776],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667672981050458, 50.20319430617383],
+                            [8.66770844805859, 50.203201333386204],
+                            [8.667703403711613, 50.203211763691],
+                            [8.667667936703424, 50.20320473647976],
+                            [8.667672981050458, 50.20319430617383],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667738409372674, 50.20320737311698],
+                            [8.667774428084414, 50.2032145096384],
+                            [8.667769371845537, 50.20322496452772],
+                            [8.667733353134878, 50.203217828007894],
+                            [8.667738409372674, 50.20320737311698],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667938960932076, 50.203194121782076],
+                            [8.667950860927618, 50.20319647957328],
+                            [8.667940760559048, 50.20321736432197],
+                            [8.667928860563535, 50.203215006532076],
+                            [8.667938960932076, 50.203194121782076],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667858327586657, 50.20315289877965],
+                            [8.667873128290466, 50.20312341217388],
+                            [8.66792354912215, 50.203133780756474],
+                            [8.667908748419308, 50.203163267355905],
+                            [8.667858327586657, 50.20315289877965],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667830383505418, 50.20314638390741],
+                            [8.667785403770779, 50.203137134239654],
+                            [8.66779938868791, 50.203109272871245],
+                            [8.667844368422578, 50.2031185225444],
+                            [8.667830383505418, 50.20314638390741],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667766881878748, 50.20312815111052],
+                            [8.667755401266248, 50.20312579022783],
+                            [8.667765270466191, 50.203106128368745],
+                            [8.66777675107872, 50.2031084892524],
+                            [8.667766881878748, 50.20312815111052],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667646943842755, 50.203129084370744],
+                            [8.667620820373088, 50.203181128667296],
+                            [8.667534382022609, 50.203163353428494],
+                            [8.667560505493213, 50.20311130911256],
+                            [8.667646943842755, 50.203129084370744],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667667836710962, 50.20308424063427],
+                            [8.667652539183166, 50.203114717059094],
+                            [8.66759833208286, 50.20310356986076],
+                            [8.667613629609718, 50.20307309342883],
+                            [8.667667836710962, 50.20308424063427],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667674534069619, 50.20306625478665],
+                            [8.667660080688506, 50.203063282577176],
+                            [8.667670193372913, 50.203043135610955],
+                            [8.667684646754083, 50.20304610782168],
+                            [8.667674534069619, 50.20306625478665],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.66769728532978, 50.20302859555531],
+                            [8.667680399604052, 50.20299788538267],
+                            [8.667728379055063, 50.20298707734378],
+                            [8.667745264779711, 50.20301778752335],
+                            [8.66769728532978, 50.20302859555531],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667774185570721, 50.20302339762091],
+                            [8.667778290590235, 50.20301480945122],
+                            [8.667804706419275, 50.20301998233569],
+                            [8.667800601399762, 50.20302857050444],
+                            [8.667774185570721, 50.20302339762091],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.66781708233853, 50.20303150438522],
+                            [8.667821187358072, 50.20302291621701],
+                            [8.667847183888114, 50.2030280069913],
+                            [8.667843078868543, 50.20303659515858],
+                            [8.66781708233853, 50.20303150438522],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667571955069718, 50.20297871300099],
+                            [8.667582556603236, 50.20298078904992],
+                            [8.667565137952948, 50.20301723087121],
+                            [8.667554536418436, 50.203015154823845],
+                            [8.667571955069718, 50.20297871300099],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667925361639533, 50.203100676620494],
+                            [8.667934436868904, 50.203081690232864],
+                            [8.667947877947228, 50.20308432233031],
+                            [8.667938802716662, 50.20310330871732],
+                            [8.667925361639533, 50.203100676620494],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667954995645943, 50.2030385828119],
+                            [8.66796364547497, 50.2030204863876],
+                            [8.667977550037534, 50.20302320925097],
+                            [8.667968900209843, 50.20304130567422],
+                            [8.667954995645943, 50.2030385828119],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667975076057957, 50.203011862534794],
+                            [8.667927903654544, 50.20300262498867],
+                            [8.667941387661216, 50.202974414888104],
+                            [8.667988560065538, 50.202983652439656],
+                            [8.667975076057957, 50.203011862534794],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.6680123736503, 50.20294622267161],
+                            [8.668028239570077, 50.20294932962261],
+                            [8.668019535705213, 50.202967539124245],
+                            [8.668003669785435, 50.20296443217444],
+                            [8.6680123736503, 50.20294622267161],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667925618405036, 50.202971069738226],
+                            [8.667911675662623, 50.20300023956696],
+                            [8.667863498600212, 50.202990805281075],
+                            [8.667877441342597, 50.2029616354462],
+                            [8.667925618405036, 50.202971069738226],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667851833714423, 50.20295662082199],
+                            [8.667837492607845, 50.20298662408345],
+                            [8.667789749573132, 50.202977274788196],
+                            [8.66780409067971, 50.2029472715212],
+                            [8.667851833714423, 50.20295662082199],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.66770528816133, 50.20297884688634],
+                            [8.667667891121539, 50.202971523597995],
+                            [8.667678920950692, 50.20294844790746],
+                            [8.667716317991875, 50.202955771199356],
+                            [8.66770528816133, 50.20297884688634],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667722590539825, 50.202939362303056],
+                            [8.667707778830902, 50.20293646179255],
+                            [8.667716719456337, 50.202917756947954],
+                            [8.66773153116526, 50.2029206574596],
+                            [8.667722590539825, 50.202939362303056],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.66773048576195, 50.20290037516881],
+                            [8.667718802653098, 50.20286037362334],
+                            [8.667777682687557, 50.202853328213166],
+                            [8.667789365795045, 50.20289332976455],
+                            [8.66773048576195, 50.20290037516881],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667811638573255, 50.20289710386257],
+                            [8.667816356231157, 50.202887705089836],
+                            [8.667846121005311, 50.202893825973604],
+                            [8.667841403347381, 50.2029032247448],
+                            [8.667811638573255, 50.20289710386257],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667858737842892, 50.202907069682794],
+                            [8.667874420869225, 50.20287582511412],
+                            [8.667929981779622, 50.2028872507656],
+                            [8.667914298754283, 50.20291849532677],
+                            [8.667858737842892, 50.202907069682794],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.667931363891, 50.202922004631404],
+                            [8.667935826540855, 50.20291311390511],
+                            [8.667962813268247, 50.20291866350357],
+                            [8.667958350618363, 50.20292755422852],
+                            [8.667931363891, 50.202922004631404],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [8.668075016959762, 50.202896618469794],
+                            [8.668090494641888, 50.202899801328925],
+                            [8.668079656778076, 50.202921393095295],
+                            [8.66806417909595, 50.202918210237556],
+                            [8.668075016959762, 50.202896618469794],
+                        ],
+                    ],
+                },
+                properties: {},
+            },
+            {
+                type: "Feature",
+                properties: {
+                    "stroke-opacity": 0.5,
+                },
+                geometry: {
+                    type: "LineString",
+                    coordinates: [
+                        [8.6678374, 50.203186],
+                        [8.6677781, 50.2031739],
+                        [8.667726, 50.2031596],
+                        [8.6676959, 50.2031399],
+                    ],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    "stroke-opacity": 0.5,
+                },
+                geometry: {
+                    type: "LineString",
+                    coordinates: [
+                        [8.6676959, 50.2031399],
+                        [8.6676954, 50.203156],
+                    ],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    "stroke-opacity": 0.5,
+                },
+                geometry: {
+                    type: "LineString",
+                    coordinates: [
+                        [8.6676959, 50.2031399],
+                        [8.6677218, 50.203143],
+                    ],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {},
+                geometry: {
+                    type: "LineString",
+                    coordinates: [
+                        [8.6679739, 50.2029442],
+                        [8.6680146, 50.2029171],
+                        [8.6680579, 50.2029055],
+                    ],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {},
+                geometry: {
+                    type: "LineString",
+                    coordinates: [
+                        [8.668042, 50.2029014],
+                        [8.6680578, 50.2029055],
+                        [8.668046, 50.2029206],
+                    ],
+                },
+            },
+        ],
+    };
+
+    const labels = {
+        type: "FeatureCollection",
+        features: [
+            {
+                type: "Feature",
+                properties: {
+                    name: "Eingang",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667939860745577, 50.203205743052024],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Keßler<br /> Rohrleitungs- <br /> bau<br /> HIRSCH GmbH",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667753890609646, 50.20321616882235],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Städtische Bühnen<br /> Frankfurt am Main GmbH",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667688192381007, 50.203203034932415],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Mainova AG",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667590662932682, 50.20314621888993],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Fluchtweg",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667520610136592, 50.20319666920766],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Staatliche Schlösser<br /> und Gärten Hessen",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667633084396911, 50.20309390524396],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "AIFS<br /> Education Travel",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667672363721294, 50.2030546951988],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Finanzagentur",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667766076172484, 50.20311713973963],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Creative<br /> Change<br /> e.V.",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667814886096679, 50.20312782838933],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Deichmann",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667890938354404, 50.20314333976489],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Süwag Energie AG",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.66793661979338, 50.20309249947509],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Fluchtweg",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667568546510836, 50.2029979719361],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "dm-drogerie markt",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667712832191881, 50.203007836449544],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Deutsche<br /> Bank AG",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667789445994998, 50.20302168997783],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "IST-<br />Hochschule",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667832133113322, 50.203029755687794],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Mainmetall",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667966272841738, 50.20303089603091],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Bundeswehr",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667958231860041, 50.20299313871145],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Deutsche<br /> Leasing AG",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667894558502624, 50.20298093750658],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "ALDI SÜD",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667820791643777, 50.202966947802324],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Finanzamt<br /> Frankfurt<br /> am Main",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667692104556707, 50.2029636473969],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Alte Leipziger<br /> Lebensversicherung<br /> a. G.",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.66771965499808, 50.202928559625505],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "iba/Internationale<br /> Berufsakademie der<br /> F+U Unternehmensgruppe<br /> gGmbhH",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667754084224072, 50.20287685169099],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Deutsche<br /> Rentenversicherung<br /> Hessen",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667828879789283, 50.20289546491732],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Fachverband<br /> Garten,<br /> Landschaft,<br /> Sportplatzbau",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667894359811257, 50.202897160220445],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "DRK Volunta<br /> gGmbH",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.667947088579623, 50.20292033406682],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "DACHSER SE",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.668015954677756, 50.20295688089793],
+                },
+            },
+            {
+                type: "Feature",
+                properties: {
+                    name: "Ausgang",
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [8.668077336868919, 50.202909005782544],
+                },
+            },
+        ],
+    };
+
+    let map = null;
+
+    function removeMap() {
+        if (map) {
+            map.off();
+            map.remove();
+            map = null;
+        }
+    }
+
+    function initialiseMap() {
+        if (document.querySelector("#hallenMap") == null) return;
+
+        map = L.map("hallenMap", {
+            fullscreenControl: true,
+            rotate: true,
+            touchRotate: true,
+            rotateControl: {
+                closeOnZeroBearing: false,
+                // position: 'bottomleft',
+            },
+            bearing: 110,
+            zoomControl: false,
+            minZoom: 21,
+        }).setView([50.203117, 8.667827], 21);
+
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 21,
+            maxNativeZoom: 19,
+            attribution:
+                '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }).addTo(map);
+
+        L.geoJSON(geojson).addTo(map);
+
+        var pointLayer = L.geoJSON(null, {
+            pointToLayer: function (feature, latlng) {
+                let label = String(feature.properties.name); // Must convert to string, .bindTooltip can't use straight 'feature.properties.attribute'
+
+                const marker = new L.CircleMarker(latlng, {
+                    radius: 1,
+                })
+                    .bindTooltip(label, {
+                        permanent: true,
+                        direction: "center",
+                        className: "my-label",
+                    })
+                    .openTooltip();
+
+                return marker;
+            },
+        });
+        pointLayer.addData(labels);
+        map.addLayer(pointLayer);
+    }
+
+    document.addEventListener("astro:before-swap", () => {
+        removeMap();
+    });
+
+    document.addEventListener("astro:after-swap", () => {
+        initialiseMap();
+    });
+
+    initialiseMap();
+</script>

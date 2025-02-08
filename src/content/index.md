@@ -8,8 +8,8 @@ heading:
     text: Zukunftschancen
 ---
 
-Aliquid fugiat neque commodi numquam facere aut optio.
-Eaque nesciunt  ipsum et dolorem occaecati ut omnis qui.
-Iusto deserunt voluptatem  consequuntur fugiat molestiae quia.
-Iste ducimus odit vero atque aut  distinctio. Et est ullam eum tempora esse beatae et.
-In tempore  repudiandae voluptas numquam aut blanditiis consectetur iusto.
+**Entdecke deine Zukunft bei der Berufsmesse der Otto-Hahn-Schule.**
+
+Nach dem Erfolg der Berufsmesse im letzten Jahr erleichtern wir auch in diesem Jahr wieder vielen Schülern den Einstieg ins Berufsleben.
+Vom dualen Studium im Maschinenbau bis zur Ausbildung zum Fachinformatiker ist bei über 20 Ausstellern für jeden etwas dabei.
+Komm vorbei und mach deine ersten Schritte in Richtung Karriere!

@@ -7,6 +7,8 @@ import {
     LucideHouse,
     LucideMenu,
     LucideUser,
+    LucidePresentation,
+    LucideMap,
 } from "lucide-vue-next";
 
 import {
@@ -66,6 +68,34 @@ onMounted(() => {
                     >
                         <div class="flex gap-2">
                             <LucideBuilding2 />Aussteller
+                        </div>
+                        <LucideChevronRight />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/hallenplan"
+                        class="flex justify-between p-3 rounded-xl bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color]"
+                        :class="{
+                            '!bg-[--pressed-primary-container-color]':
+                                pathname == '/hallenplan',
+                        }"
+                    >
+                        <div class="flex gap-2"><LucideMap />Hallenplan</div>
+                        <LucideChevronRight />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="/workshops"
+                        class="flex justify-between p-3 rounded-xl bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color]"
+                        :class="{
+                            '!bg-[--pressed-primary-container-color]':
+                                pathname == '/workshops',
+                        }"
+                    >
+                        <div class="flex gap-2">
+                            <LucidePresentation />Workshops
                         </div>
                         <LucideChevronRight />
                     </a>

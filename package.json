@@ -20,6 +20,7 @@
     "clsx": "^2.1.1",
     "colorjs.io": "^0.5.2",
     "leaflet": "^1.9.4",
+    "leaflet-rotate": "^0.2.8",
     "leaflet.fullscreen": "^3.0.2",
     "lucide-vue-next": "^0.474.0",
     "material-dynamic-colors": "^1.1.2",

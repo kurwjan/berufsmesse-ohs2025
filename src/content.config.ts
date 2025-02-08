@@ -52,6 +52,23 @@ const partners = defineCollection({
     }),
 });
 
+const workshops = defineCollection({
+  loader: file("./src/content/workshops.yaml"),
+  schema: ({ image }) =>
+    z.object({
+      time: z.string(),
+      workshops: z
+        .object({
+          company: z.string(),
+          partner: z.boolean().optional(),
+          room: z.string(),
+          subject: z.string(),
+          image: image(),
+        })
+        .array(),
+    }),
+});
+
 const license = defineCollection({
   loader: glob({ pattern: "license.md", base: "./src/content" }),
   schema: z.object({
@@ -59,4 +76,11 @@ const license = defineCollection({
   }),
 });
 
-export const collections = { index, exhibitors, greetings, partners, license };
+export const collections = {
+  index,
+  exhibitors,
+  greetings,
+  partners,
+  workshops,
+  license,
+};
