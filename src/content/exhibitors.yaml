@@ -235,3 +235,12 @@
   jobs:
     - Ausbildung zum Verkäufer & Kaufmann im Einzelhandel (m/w/d)
     - Abiturientenprogramm Handelsfachwirt Verkauf (m/w/d)
+
+- name: Deutsche Finanzagentur
+  image: ../assets/exhibitors/deutsche_finanzagentur.svg
+  link: https://www.deutsche-finanzagentur.de/ueber-uns/karriere/ueberblick
+  slug: deutsche_finanzagentur
+  jobs:
+    - Fachinformatiker für Systemintegration (Ausbildung)
+  education:
+    - Angewandte Informatik (Duales Studium)
