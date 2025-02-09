@@ -26,7 +26,7 @@ $ npm run build
 ```
 
 ## Lizenz
-[Das Projekt ist unter der EUPL v1.2 lizensiert.](https://github.com/kurwjan/berufsmesse-ohs2025/blob/master/src/LICENSE)
+[Das Projekt ist unter der EUPL v1.2 lizensiert.](https://github.com/kurwjan/berufsmesse-ohs2025/blob/master/LICENSE)
 
 Kurzgefasst werden alle Rechte gewährt – also z. B. verändern, vervielfältigen, usw. – unter folgenden Bedingungen:
 - Bei Modifizierung müssen alle Hinweise auf die Lizenz erhalten bleiben und es muss deutlich darauf gewiesen werden, dass das Werk geändert wurde.
