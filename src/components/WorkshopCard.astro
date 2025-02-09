@@ -51,7 +51,7 @@ const { workshop } = Astro.props;
             <div>
                 <h3 class="font-medium text-[14pt]">{workshop.company}</h3>
                 <div
-                    class={`flex items-center text-xs w-fit gap-1 p-1 bg-[--dark-primary-container-color] rounded-md ${workshop.partner == true && "bg-gray-500 text-gray-200"}`}
+                    class={`hidden items-center text-xs w-fit gap-1 p-1 bg-[--dark-primary-container-color] rounded-md ${workshop.partner == true && "bg-gray-500 text-gray-200"}`}
                 >
                     <LucideMapPin size={16} />
                     {workshop.room}
