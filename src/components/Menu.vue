@@ -9,6 +9,8 @@ import {
     LucideUser,
     LucidePresentation,
     LucideMap,
+    LucideGlobe,
+    LucideCode,
 } from "lucide-vue-next";
 
 import {
@@ -126,6 +128,23 @@ onMounted(() => {
                     </a>
                 </li>
             </ul>
+            <div class="flex w-full justify-between items-center">
+                <p class="text-xs">Made by Dacjan Gapinski</p>
+                <div class="flex gap-2">
+                    <a
+                        href="https://dacjan.de"
+                        class="flex p-2 bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color] rounded-md"
+                    >
+                        <LucideGlobe :size="16" />
+                    </a>
+                    <a
+                        href="https://github.com/kurwjan/berufsmesse-ohs2025"
+                        class="flex p-2 bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color] rounded-md"
+                    >
+                        <LucideCode :size="16" />
+                    </a>
+                </div>
+            </div>
         </SheetContent>
     </Sheet>
 </template>

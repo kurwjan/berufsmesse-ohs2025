@@ -50,6 +50,8 @@ pressedDarkestContainerColor.set({
     l: 68,
 });
 
+// Text should be also themed but I'm too lazy.
+
 import { ClientRouter } from "astro:transitions";
 
 import { Image } from "astro:assets";
@@ -78,7 +80,6 @@ const { title, heading, image = 0 } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
-        <meta name="description" content="" />
 
         <link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -101,20 +102,20 @@ const { title, heading, image = 0 } = Astro.props;
         <meta name="author" content="Dacjan Gapinski" />
         <meta
             name="description"
-            content="Die Seite für die Berufsmesse der OHS."
+            content="Entdecke deine Zukunft bei der Berufsmesse der Otto-Hahn-Schule."
         />
         <title>{title}</title>
 
         <meta property="og:title" content={title} />
         <meta
             property="og:description"
-            content="Die Seite für die Berufsmesse der OHS."
+            content="Entdecke deine Zukunft bei der Berufsmesse der Otto-Hahn-Schule."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={Astro.url} />
         <meta property="og:locale" content="de_DE" />
         <meta property="og:site_name" content="OHS Zukunftschancen" />
-        <meta property="og:image" content="/school_front.webp" />
+        <meta property="og:image" content={`${Astro.site}school_front.webp`} />
         <meta property="og:image:type" content="image/webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -129,7 +130,10 @@ const { title, heading, image = 0 } = Astro.props;
             property="twitter:description"
             content="Die Seite für die Berufsmesse der OHS."
         />
-        <meta property="twitter:image" content="/school_front.webp" />
+        <meta
+            property="twitter:image"
+            content={`${Astro.site}school_front.webp`}
+        />
         <meta
             property="twitter:image:alt"
             content="Eine Aufschrift mit dem Text 'Otto-Hahn-Schule' am Haupteingang der Schule."
