@@ -15,6 +15,11 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) =>
+        page !== "https://ohszukunftschancen.de/datenschutz/" &&
+        page !== "https://ohszukunftschancen.de/lizenz/" &&
+        page !== "https://ohszukunftschancen.de/impressum/",
+    }),
   ],
 });

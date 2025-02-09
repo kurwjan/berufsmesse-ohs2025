@@ -20,7 +20,7 @@ const { Content } = await render(greeting);
 ---
 
 <BaseLayout
-    title=`${greeting.data.name} - OHS Zukunftschancen`
+    title={`${greeting.data.name} - OHS Zukunftschancen`}
     heading={[
         { format: "normal", text: "Grußwort von " },
         { format: "colored", text: greeting.data.name },

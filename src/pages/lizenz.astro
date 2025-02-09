@@ -11,8 +11,9 @@ const { Content } = await render(licenseData);
 ---
 
 <BaseLayout
-    title=`${ licenseData.data.name } - OHS Zukunftschancen`
+    title={`${licenseData.data.name} - OHS Zukunftschancen`}
     heading={[{ format: "normal", text: licenseData.data.name }]}
+    noindex={true}
 >
     <Content />
 </BaseLayout>

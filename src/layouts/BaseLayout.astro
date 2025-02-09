@@ -69,9 +69,10 @@ interface Props {
     title: string;
     heading: { format: string; text: string }[];
     image?: number;
+    noindex?: boolean;
 }
 
-const { title, heading, image = 0 } = Astro.props;
+const { title, heading, image = 0, noindex = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -82,6 +83,7 @@ const { title, heading, image = 0 } = Astro.props;
         <meta name="generator" content={Astro.generator} />
 
         <link rel="sitemap" href="/sitemap-index.xml" />
+        {noindex && <meta name="robots" content="noindex" />}
 
         <link
             rel="icon"
@@ -182,7 +184,7 @@ const { title, heading, image = 0 } = Astro.props;
         <main
             class="p-5 pt-8 bg-white rounded-xl relative -top-3 flex flex-col gap-4 text-center text-[14px]"
         >
-            <div class="mobile">
+            <div class="mobile flex flex-col gap-2">
                 <h1 class="font-semibold font-display text-[22px] mobile">
                     {
                         heading.map((part) => (
@@ -200,7 +202,9 @@ const { title, heading, image = 0 } = Astro.props;
                         ))
                     }
                 </h1>
-                <slot name="description" />
+                <div>
+                    <slot name="description" />
+                </div>
             </div>
             <slot />
         </main>
