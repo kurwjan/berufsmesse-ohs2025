@@ -128,20 +128,22 @@ onMounted(() => {
                     </a>
                 </li>
             </ul>
-            <div class="flex w-full justify-between items-center">
+            <div class="flex w-full justify-between items-center gap-2">
                 <p class="text-xs">Made by Dacjan Gapinski</p>
                 <div class="flex gap-2">
                     <a
                         href="https://dacjan.de"
-                        class="flex p-2 bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color] rounded-md"
+                        class="flex p-2 bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color] rounded-md text-[10px] items-center gap-1"
                     >
                         <LucideGlobe :size="16" />
+                        Website
                     </a>
                     <a
                         href="https://github.com/kurwjan/berufsmesse-ohs2025"
-                        class="flex p-2 bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color] rounded-md"
+                        class="flex p-2 bg-[--primary-container-color] hover:bg-[--pressed-primary-container-color] active:bg-[--pressed-primary-container-color] rounded-md text-[10px] items-center gap-1"
                     >
                         <LucideCode :size="16" />
+                        Quellcode
                     </a>
                 </div>
             </div>
