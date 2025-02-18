@@ -1,7 +1,7 @@
 - time: "08:35 - 09:20"
   slug: 1
   workshops:
-    - company: Fachverband Garten-, Landschafts- und Sportplatzbau Hessen-Thüringen e. V.
+    - company: Fachverband Garten-, Landschafts- und Sportplatzbau Hessen-Thüringen
       room: Gymnastikhalle
       subject: „Landschaftsgärtner*in – Grüner Beruf mit Zukunft“
       image: ../assets/exhibitors/galabau.svg
@@ -13,11 +13,11 @@
 - time: "09:40 - 10:25"
   slug: 2
   workshops:
-    - company: American Institute For Foreign Study (Deutschland) GmbH
+    - company: AIFS Educational Travel
       room: Gymnastikhalle
       subject: Auslandsaufenthalte weltweit mit AIFS Educational Travel
       image: ../assets/exhibitors/aifs.png
-    - company: Deichmann SE
+    - company: Deichmann
       room: H1.02
       subject: Ausbildungs- und Studienmöglichkeiten bei Deichmann.
       image: ../assets/exhibitors/deichmann.svg
@@ -32,18 +32,18 @@
 - time: "11:35 - 12:20"
   slug: 4
   workshops:
-    - company: Deichmann SE
+    - company: Deichmann
       room: Gymnastikhalle
       subject: Ausbildungs- und Studienmöglichkeiten bei Deichmann.
       image: ../assets/exhibitors/deichmann.svg
-    - company: American Institute For Foreign Study (Deutschland) GmbH
+    - company: AIFS Educational Travel
       room: H1.02
       subject: Auslandsaufenthalte weltweit mit AIFS Educational Travel
       image: ../assets/exhibitors/aifs.png
 - time: "12:25 - 13:00"
   slug: 5
   workshops:
-    - company: Fachverband Garten-, Landschafts- und Sportplatzbau Hessen-Thüringen e. V.
+    - company: Fachverband Garten-, Landschafts- und Sportplatzbau Hessen-Thüringen
       room: H1.02
       subject: „Landschaftsgärtner*in – Grüner Beruf mit Zukunft“
       image: ../assets/exhibitors/galabau.svg
