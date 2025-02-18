@@ -15,6 +15,9 @@ if (!exhibitors) {
     heading={[{ format: "normal", text: "Aussteller" }]}
     image={1}
 >
+    <p slot="description">
+        Dieses Jahr haben wir {exhibitors.length} Aussteller!
+    </p>
     <div class="grid gap-4 responsive justify-center">
         {exhibitors.map((exhibitor) => <ExhibitorCard exhibitor={exhibitor} />)}
     </div>

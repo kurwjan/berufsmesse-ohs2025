@@ -23,6 +23,11 @@ const indexData = await getEntry("index", "index");
 if (!indexData) {
     throw new Error("Collection entry for the index page not found!");
 }
+
+const exhibitorData = await getCollection("exhibitors");
+if (!exhibitorData) {
+    throw new Error("Collection entry for the exhibitors page not found!");
+}
 const { Content } = await render(indexData);
 ---
 
@@ -50,7 +55,11 @@ const { Content } = await render(indexData);
         </CardGroup>
     </div>
     <CardGroup>
-        <LinkTile heading="Aussteller" href="/aussteller" prefetch="load">
+        <LinkTile
+            heading={`Aussteller (${exhibitorData.length})`}
+            href="/aussteller"
+            prefetch="load"
+        >
             <LucideBuilding2 slot="icon" />
         </LinkTile>
         <ExhibitorScrollCard />

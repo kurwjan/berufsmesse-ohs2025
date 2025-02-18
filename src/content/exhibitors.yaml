@@ -4,11 +4,11 @@
   link: https://finanzverwaltung-mein-job.hessen.de/
   slug: finanzamt
   jobs:
-    - Finanzwirt (Ausbildung)
+    - Finanzwirt
   education:
-    - Diplom-Finanzwirt (duales Studium)
+    - Diplom-Finanzwirt
 
-- name: Mainova AG
+- name: Mainova
   partner: true
   image: ../assets/partners/mainova.svg
   link: https://mainova.de/karriere
@@ -32,6 +32,17 @@
     - Wirtschaftsingenieurwesen
     - Business Administration
 
+- name: Media University of Applied Sciences
+  image: ../assets/exhibitors/hmkw.svg
+  link: https://www.media-university.de/
+  slug: hmkw
+  description: "Breites Studienangebot mit den Schwerpunkten:"
+  descriptionList:
+    - Medien
+    - Management
+    - Design
+    - Psychologie
+
 - name: AIFS Educational Travel
   image: ../assets/exhibitors/aifs.png
   link: https://www.aifs.de/
@@ -54,10 +65,10 @@
   link: https://karriere.aldi-sued.de/
   slug: aldi
   jobs:
-    - Ausbildung zum Verkäufer & Kaufmann im Einzelhandel (m/w/d)
-    - Abiturientenprogramm Handelsfachwirt Verkauf (m/w/d)
+    - Verkäufer & Kaufmann im Einzelhandel
+    - Abiturientenprogramm Handelsfachwirt Verkauf
 
-- name: Alte Leipziger Lebensversicherung a.G.
+- name: Alte Leipziger Lebensversicherung
   image: ../assets/exhibitors/alte_leipziger.svg
   link: https://www.alh.de/karriere/ausbildung-studium/ueberblick
   slug: alte_leipziger
@@ -67,20 +78,30 @@
   education:
     - Duale Studiengänge BWL
 
+- name: b-n-b Steuerberatersozietät
+  image: ../assets/exhibitors/bnb.png
+  link: https://bnb-steuerbuero.de/
+  slug: bnb
+  jobs:
+    - Steuerfachangestellte
+    - Lahnfachwirt
+    - Steuerberater
+
 - name: Bundeswehr
   image: ../assets/exhibitors/bundeswehr.svg
   link: https://www.bundeswehr.de
   slug: bundeswehr
   description: Über 200 verschiedene Jobs, Ausbildungen und Studiengänge.
 
-- name: Creative Change e.V.
+- name: Creative Change
   image: ../assets/exhibitors/creative_change.png
   link: https://cc-ev.de/
   slug: creative_change
   jobs:
-    - Ausbildung Kauffrau/-mann für Büromanagement
+    - Kauffrau/-mann für Büromanagement
   education:
-    - Duale Studenten BWL oder soziale Arbeit
+    - BWL
+    - Soziale Arbeit
   other:
     - Bundesfreiwilligendienst
     - Jahrespraktikanten
@@ -90,103 +111,126 @@
   link: https://dachser.de
   slug: dachser
   jobs:
+    - Fachlagerist
     - Kaufmann/frau für Spedition und Logistikdienstleistung
     - Kaufmann/frau für Büromanagement
-    - Ausbildung zum Fachlagerist
     - Kaufmann/-frau für IT-Systemmanagement
 
-- name: Deichmann SE
+- name: Deichmann
   image: ../assets/exhibitors/deichmann.svg
   link: https://www.deichmann-karriere.de/
   slug: deichmann
   jobs:
-    - Verkäufer (m/w/d)
-    - Kaufmann im Einzelhandel (m/w/d)
-    - Handelsfachwirt (m/w/d)
+    - Verkäufer
+    - Kaufmann im Einzelhandel
+    - Handelsfachwirt
   education:
-    - Duales Studium B.A. (m/w/d)
+    - Duales Studium B.A.
     - BWL - Handelsmanagement
 
-- name: Deutsche Bank AG
+- name: Deutsche Bank
   image: ../assets/exhibitors/deutsche_bank.svg
   link: https://careers.db.com/ausbildung-studium/
   slug: deutsche_bank
   jobs:
-    - Ausbildung Bankaukaufleute (d/m/w)
-    - Ausbildung Fachinformatiker*in Anwendungsentwicklung (d/m/w)
-    - Ausbildung Fachinformatiker*in Systemintegration (d/m/w)
-    - Ausbildung Kaufleute für Büromanagement Corporate Center (d/m/w)
+    - Bankaukaufleute
+    - Fachinformatiker*in Anwendungsentwicklung
+    - Fachinformatiker*in Systemintegration
+    - Kaufleute für Büromanagement Corporate Center
   education:
-    - Duales Studium BWL/Bank in der Corporate Bank (d/m/w)
-    - Duales Studium Informatik (Softwaretechnologie) (d/m/w)
-    - Duales Studium Wirtschaftsinformatik – Digital Corporate Banking (d/m/w)
-    - Duales Studium Business Administration - im Relationship und Transaction Management der Unternehmensbank (d/m/w)
+    - BWL/Bank in der Corporate Bank
+    - Informatik (Softwaretechnologie)
+    - Wirtschaftsinformatik – Digital Corporate Banking
+    - Business Administration - im Relationship und Transaction Management der Unternehmensbank
 
 - name: Deutsche Finanzagentur
   image: ../assets/exhibitors/deutsche_finanzagentur.svg
   link: https://www.deutsche-finanzagentur.de/ueber-uns/karriere/ueberblick
   slug: deutsche_finanzagentur
   jobs:
-    - Fachinformatiker für Systemintegration (Ausbildung)
+    - Fachinformatiker für Systemintegration
   education:
-    - Angewandte Informatik (Duales Studium)
+    - Angewandte Informatik
 
-- name: Deutsche Leasing AG
+- name: Deutsche Leasing
   image: ../assets/exhibitors/deutsche_leasing.svg
   link: https://jobs.deutsche-leasing.com/
   slug: deutsche_leasing
   jobs:
-    - Kaufleute für Büromanagement (m/w/d)
+    - Kaufleute für Büromanagement
   education:
-    - Duales Studium Wirtschaftsinformatik (m/w/d)
-    - Duales Studium International Business Management (m/w/d)
+    - Wirtschaftsinformatik
+    - International Business Management
   other:
-    - Praktikum (m/w/d)
+    - Praktikum
 
 - name: Deutsche Rentenversicherung Hessen
   image: ../assets/exhibitors/drv.svg
   link: https://ausbildung-drv-hessen.de/
   slug: drv
   jobs:
-    - Ausbildung zur/ zum Sozialversicherungsfachangestellten
+    - Sozialversicherungsfachangestellte/r
   education:
     - Bachelor of Arts - Digitale Verwaltung
     - Bachelor of Laws - Sozialversicherung - Rentenversicherung
     - Bachelor of Laws - Betriebsprüfdienst
     - Bachelor of Science - Wirtschaftsinformatik
 
-- name: dm-drogerie markt GmbH + Co. KG
+- name: dm-drogerie markt
   image: ../assets/exhibitors/dm.png
   link: https://www.dm-jobs.de/dein-berufsstart
   slug: dm
   jobs:
-    - Drogist (w/m/d)
+    - Drogist
   education:
-    - Duales Studium BWL-Handel Schwerpunkt Filiale (B.A.)
+    - BWL-Handel Schwerpunkt Filiale
 
-- name: Fachverband Garten-, Landschafts- und Sportplatzbau Hessen-Thüringen e. V.
+- name: DRK Volunta
+  image: ../assets/exhibitors/volunta.svg
+  link: https://www.volunta.de/
+  slug: volunta
+  description: Nationale und Internationale Freiwilligendienste
+
+- name: Fachverband Garten-, Landschafts- und Sportplatzbau Hessen-Thüringen
   image: ../assets/exhibitors/galabau.svg
   link: https://www.landschaftsgaertner.com
   slug: galabau
   jobs:
     - Landschaftsgärtner*in
   education:
-    - Duales Studium Landschaftsgärtner*in oder Landschaftsarchitektur
+    - Landschaftsgärtner*in oder Landschaftsarchitektur
 
-- name: iba | Internationale Berufsakademie der F+U Unternehmensgruppe gGmbH
+- name: Hochschule Fresenius
+  image: ../assets/exhibitors/fresenius.svg
+  link: https://www.hs-fresenius.de/
+  slug: fresenius
+  education:
+    - Naturwissenschaften
+    - Gesundheit & Soziales
+    - Management
+    - Mode & Design
+    - Psychologie
+
+- name: iba | Internationale Berufsakademie der F+U Unternehmensgruppe
   image: ../assets/exhibitors/iba.png
   link: https://ibadual.com
   slug: iba
   education:
-    - Duales Studium in den Bereichen Management, Soziales und Gesundheit
+    - Management
+    - Soziales
+    - Gesundheit
 
 - name: IST-Hochschule
   image: ../assets/exhibitors/ist.svg
   link: https://www.ist-hochschule.de/
   slug: ist
-  description: Diverse Studiengänge in verschiedenen Bereichen
+  education:
+    - Sport & Management
+    - Tourismus & Hospitality
+    - Fitness & Gesundheit
+    - Kommunikation & Wirtschaft
 
-- name: Keßler Rohrleitungsbau HIRSCH GmbH
+- name: Keßler Rohrleitungsbau HIRSCH
   image: ../assets/exhibitors/hirsch.png
   link: https://www.kessler-hirsch.de/
   slug: hirsch
@@ -195,9 +239,9 @@
     - Tiefbaufacharbeiter Schwerpunkt Straßenbau
     - Industriekaufmann
   education:
-    - Duales Studium Bauingenieur
+    - Bauingenieur
 
-- name: Mainmetall Großhandelsges. m.b.H.
+- name: Mainmetall
   image: ../assets/exhibitors/mainmetall.png
   link: https://www.mainmetall.de/karriere
   slug: mainmetall
@@ -214,7 +258,7 @@
     - Zierpflanzengärtner/in
     - Veranstaltungskaufmann/Kauffrau
 
-- name: Städtische Bühnen Frankfurt am Main GmbH
+- name: Städtische Bühnen Frankfurt am Main
   image: ../assets/exhibitors/städtische_bühnen.png
   link: https://www.buehnen-frankfurt.de/
   slug: staedtische-buehnen
@@ -228,9 +272,9 @@
     - Tischler*in
     - Raumausstatter*in
   education:
-    - Duales Studium B.A. Business Administration
+    - B.A. Business Administration
 
-- name: Süwag Energie AG
+- name: Süwag Energie
   image: ../assets/exhibitors/süwag.svg
   link: https://www.suewag.com/corp/karriere
   slug: suewag
@@ -244,3 +288,14 @@
   education:
     - Bachelor of Science (BWL) ausbildungsintegriert
     - Bachelor of Science (Wirtschaftsinformatik) ausbildungsintegriert
+
+- name: TU Darmstadt
+  image: ../assets/exhibitors/tu_darmstadt.svg
+  link: https://www.tu-darmstadt.de/
+  slug: tu_darmstadt
+  description: "130 Studiengänge in exzellente und relevante Wissenschaft:"
+  descriptionList:
+    - Ingenieurwissenschaften
+    - Naturwissenschaften
+    - Geisteswissenschaften
+    - Sozialwissenschaften
